@@ -10,7 +10,7 @@ const Login = () => {
   const [inputsError, setInputsError] = useState(false);
   let navigate = useNavigate();
   function goToHome() {
-    navigate("/home");
+    navigate("/home/http-monitor");
   }
 
   const loginAction = async () => {

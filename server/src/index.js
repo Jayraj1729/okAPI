@@ -60,7 +60,7 @@ async function main() {
 
   app.listen(port, "0.0.0.0", () => {
     console.log(
-      `🔥🔥🔥 ${new Date().toISOString()} Hothost is listening on port ${port}`
+      `🔥🔥🔥 ${new Date().toISOString()} okAPI is listening on port ${port}`
     );
   });
 }

@@ -58,7 +58,7 @@ const Settings = ({ clickAndNavigate, setingsIsVisible }) => {
           Plugins
         </a>
       </div>
-      <div
+      {/* <div
         className="py-3 block cursor-pointer"
         onClick={() => {
           clickAndNavigate("settings");
@@ -86,7 +86,7 @@ const Settings = ({ clickAndNavigate, setingsIsVisible }) => {
           </svg>
           Settings
         </a>
-      </div>
+      </div> */}
     </div>
   );
 };

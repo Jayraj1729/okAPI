@@ -42,11 +42,11 @@ const Header = ({ theme, setTheme }) => {
               className="flex text-xl font-semibold whitespace-nowrap dark:text-white cursor-pointer"
               navigate
               onClick={() => {
-                clickAndNavigate("home");
+                clickAndNavigate("home/http-monitor");
               }}
             >
               <img className="h-9" src={HHlogo} alt="logo" />
-              <span className="my-auto pl-2">HotHost</span>
+              <span className="my-auto pl-2">okAPI</span>
             </div>
           </a>
 

@@ -46,7 +46,7 @@ const Settings = () => {
 
   let navigate = useNavigate();
   function goToHome() {
-    navigate("/home");
+    navigate("/home/http-monitor");
   }
   useEffect(() => {
     const fetchData = async () => {

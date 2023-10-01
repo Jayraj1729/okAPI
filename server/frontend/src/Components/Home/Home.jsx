@@ -50,7 +50,7 @@ const Home = () => {
     <div className="mx-auto pt-4 px-4 flex justify-center  mobile:max-w-max overflow-y-hidden">
       <div className="container mb-4">
         <div className="flex mb-1">
-          <div
+          {/* <div
             onClick={() => {
               clickAndNavigate("home");
             }}
@@ -61,7 +61,7 @@ const Home = () => {
             }`}
           >
             Host monitoring
-          </div>
+          </div> */}
           <div
             onClick={() => {
               clickAndNavigate("home/http-monitor");
