@@ -29,7 +29,8 @@ E.g. by googling Nodemailer mailgun you can find this answer https://stackoverfl
         'host_is_online',
         'ram_is_almost_full',
         'ram_usage_recovered',
-        'ssl_is_almost_expire'
+        'ssl_is_almost_expire',
+        'http_host_is_offline'
   ],
 
   params: [
@@ -108,6 +109,13 @@ E.g. by googling Nodemailer mailgun you can find this answer https://stackoverfl
             default_value: "⚠️ SSL certificate of HTTP host {{ HOST_NAME }} {{ HOST_LABEL }} will expire soon. Certificate is valid until: {{CERT_VALID_UNTIL}} ",
             required: false,
             type: "text",
+        },
+        {            
+          id: "http_host_is_offline_message",
+          name: "What message will be shown when http host is unreachable",
+          default_value: "⚠️  HTTP host {{ HOST_NAME }} is down",
+          required: false,
+          type: "text",
         },
   ],
 

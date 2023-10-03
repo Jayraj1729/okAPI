@@ -42,7 +42,8 @@ Just copy the password and use it here.
         'host_is_online',
         'ram_is_almost_full',
         'ram_usage_recovered',
-        'ssl_is_almost_expire'
+        'ssl_is_almost_expire',
+        'http_host_is_offline'
   ],
 
   params: [
@@ -116,12 +117,19 @@ Just copy the password and use it here.
             required: false,
             type: "text",
           },
+          {
+            id: "http_host_is_offline_message",
+            name: "What message will be shown when the API being monitored is unreachable",
+            default_value: "🚧 The API HTTP host : {{ HOST_NAME }} is down",
+            required: false,
+            type: "text",
+        },
   ],
 
   configuration: {},
     async sendMessage(settings, text) {
     if(!text) {
-        text = '🔥 This is a test notification from HotHost';
+        text = '🔥 This is a test notification from okAPI';
     }
     const { gmail_email, google_account_passwod, notify_emails } = settings.params;
     const transporter = nodemailer.createTransport({
@@ -132,7 +140,7 @@ Just copy the password and use it here.
       },
     });
     await transporter.sendMail({
-      from: `"HotHost 🔥" <${gmail_email}>`, // sender address
+      from: `"okAPI 🔥" <${gmail_email}>`, // sender address
       to: notify_emails, // list of receivers
       subject: text.slice(0, 60) + '...', // Subject line
       text: text, // plain text body

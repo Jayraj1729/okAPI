@@ -352,6 +352,31 @@ export const generateHttpWarningEvents = async (
     );
   }
 };
+// test notif start
+
+export const generateHostDownEvent = async (newData, prevData) => {
+  const events = [];
+
+  if (!newData.okStatus && prevData.okStatus) {
+    events.push("http_host_is_offline");
+  }
+
+  if (events.length !== 0) {
+    await PluginManager().handleEvents(
+      events.filter((e) => e),
+      {
+        HOST_NAME: newData.URL,
+        HOST_LABEL:
+          newData.label && newData.label !== "" ? `\`${newData.label}\`` : "",
+        EVENT_REASON: "Host is currently offline",
+        enabledPlugins: newData.enabledPlugins,
+      }
+    );
+  }
+};
+
+
+// test notif end
 
 export const parseNestedForm = (fields) => {
   return Object.keys(fields).reduce((acc, key) => {
