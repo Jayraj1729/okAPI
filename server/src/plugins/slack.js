@@ -34,7 +34,8 @@ Webhook is URL which look like this:
         'ram_usage_recovered',
         'http_host_down',
         'http_host_up',
-        'ssl_is_almost_expire'
+        'ssl_is_almost_expire',
+        'http_host_is_offline'
     ],
 
     // parameters which should be configured by user
@@ -107,6 +108,13 @@ Webhook is URL which look like this:
             id: "ssl_is_almost_expire_message",
             name: "What message will be shown when you get ssl_expire warning",
             default_value: "⚠️ SSL certificate of HTTP host {{ HOST_NAME }} {{ HOST_LABEL }} will expire soon. Certificate is valid until: {{CERT_VALID_UNTIL}} ",
+            required: false,
+            type: "text",
+        },
+        {
+            id: "http_host_is_offline_message",
+            name: "What message will be shown when the API being monitored is unreachable",
+            default_value: "🚧 The API HTTP host : {{ HOST_NAME }} is down",
             required: false,
             type: "text",
         },
