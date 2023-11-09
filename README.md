@@ -1,4 +1,4 @@
-# HotHost
+# ok-API
 
 Lightweight and minimalistic HTTP monitor. 
 
