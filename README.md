@@ -1,46 +1,21 @@
 # HotHost
 
-Lightweight and minimalistic free and opensource Servers and HTTP monitor. 
+Lightweight and minimalistic HTTP monitor. 
 
-* 💾 Shows used disk space percentage and ALERT badge if it exceeds configurable threshold (90% by default)
-* 🧠 Shows used RAM percentage and ALERT badge if it exceeds configurable threshold (90% by default)
 * ☎️ Built-in plugins to setup free Email/Slack/Telegram notifications
 * 🪧 Agents installed using **simple code snippets**. Options: Docker/Compose/Bash+curl+crontab.
 * 🏙 Allows to monitor as many hosts as needed
 * ⏰️ Configurable monitoring interval
-* 📈 View top 10 processes consuming RAM, historically over last 2 days.
 * 🌐 HTTP / HTTPS Monitor, status code check, webpage keywords existence, basic auth, notifications
 * 🔒 HTTPS SSL check with expiration reminder (default is 14 days prior to expire, configurable)
-
-For each host it allows to see:
-
-* OS version
-* CPU model
-* RAM size and current RAM ussage
-* See whether SWAP is enabled and whether it is used
 
 ## [👉🏼 STEP BY STEP INSTALLATION GUIDE](https://devforth.io/blog/critical-server-alerts-with-hothost-open-source-quick-to-setup-disk-ram-notifier/)
 
 # Preview
 
-Hosts view:
-
-![image](https://user-images.githubusercontent.com/1838656/196886907-c90e5e36-c695-4b56-85f0-aadccd125140.png)
-
-
-Add new host box:
-
-![image](https://user-images.githubusercontent.com/1838656/196889285-c9c6b7c3-d665-4c8f-b615-be990599168d.png)
-
-
 Available notification plugins:
 
 ![image](https://user-images.githubusercontent.com/1838656/196889594-5a405ca0-0608-4a39-8a42-b62d74055f99.png)
-
-
-Analyze top RAM-consuming processes at a time:
-
-<img src="https://user-images.githubusercontent.com/1838656/197183957-e22b2690-f79f-4dcd-a7b7-092ab9622990.gif" width="700"/>
 
 HTTP(s) Monitor setup:
 
@@ -50,7 +25,7 @@ HTTP(s) Monitor setup:
 
 # Installation
 
-First you need to run HotHost Web Server. Web-server itself, when will be started, will give you clear guide how to add agents via own Web UI. 
+First you need to run ok-API Web Server. Web-server itself, when will be started, will give you clear guide how to add agents via own Web UI. 
 
 You can use any host with public IP. You are responsible for setting up HTTPS.
 
@@ -139,15 +114,6 @@ docker run -d --name=hothost-web \
   -p 8007:8007  \
   devforth/hothost-web
 ```
-
-
-# Updating Web
-
-```
-docker pull devforth/hothost-web:latest
-```
-
-then recreate a contaner
 
 # Plugin development
 
