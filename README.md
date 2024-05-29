@@ -31,30 +31,6 @@ For HTTPS you can use anything, most simple options:
 - Nginx or Traefik with connected external certificate or free Let's Encrypt certificate
 - Free Cloudflare CDN which terminates SSL and gives additional layer of security.
 
-If you have existing Docker/Compose stacks, you can use snippets below:
-
-## Docker Compose
-
-Add to your existing compose stack:
-
-```
-version: '3.5'
-
-services:
-  hothost-web:
-    image: devforth/hothost-web
-    restart: always
-    environment:
-      - HOTHOST_WEB_ADMIN_USERNAME=admin
-      - HOTHOST_WEB_ADMIN_PASSWORD=!!!CHANGE_ME!!!
-      - HOTHOST_WEB_PORT=8007
-    ports:
-      - 8007:8007
-    volumes:
-      - v-hothost-data:/var/lib/hothost/data/
-volumes:
-  v-hothost-data:
-```
 
 Now you should proxy https://subdomain.yourdomain.com to serve requests from 127.0.0.1:8007.
 
@@ -93,23 +69,6 @@ server {
 
 * After that Use https://subdomain.yourdomain.com to view as admin and add new agents
 
-
-
-### Pure Docker
-
-If you are not using Compose, rhen just install Docker to your host with public IP and run folowwing command:
-
-```
-mkdir -p /www/hothostdata
-docker run -d --name=hothost-web \
-  -v /www/hothostdata:/var/lib/hothost/data/  \
-  --env HOTHOST_WEB_ADMIN_USERNAME=admin  \
-  --env HOTHOST_WEB_ADMIN_PASSWORD=!!!CHANGE_ME!!!  \
-  --restart=always  \
-  --env HOTHOST_WEB_PORT=8007  \
-  -p 8007:8007  \
-  devforth/hothost-web
-```
 
 # Plugin development
 
