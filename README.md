@@ -9,8 +9,6 @@ Lightweight and minimalistic HTTP monitor.
 * 🌐 HTTP / HTTPS Monitor, status code check, webpage keywords existence, basic auth, notifications
 * 🔒 HTTPS SSL check with expiration reminder (default is 14 days prior to expire, configurable)
 
-## [👉🏼 STEP BY STEP INSTALLATION GUIDE](https://devforth.io/blog/critical-server-alerts-with-hothost-open-source-quick-to-setup-disk-ram-notifier/)
-
 # Preview
 
 Available notification plugins:
