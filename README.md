@@ -31,8 +31,6 @@ For HTTPS you can use anything, most simple options:
 - Nginx or Traefik with connected external certificate or free Let's Encrypt certificate
 - Free Cloudflare CDN which terminates SSL and gives additional layer of security.
 
-We recommend you to check guide how to [setup HotHost with free Cloudflare plan and EC2 Nano](https://devforth.io/blog/critical-server-alerts-with-hothost-open-source-quick-to-setup-disk-ram-notifier/)
-
 If you have existing Docker/Compose stacks, you can use snippets below:
 
 ## Docker Compose
